@@ -17,13 +17,14 @@ import person01 from "../assets/images/person01.png";
 import person02 from "../assets/images/person02.png";
 import person03 from "../assets/images/person03.png";
 import person04 from "../assets/images/person04.png";
-
+const wave =  "https://em-content.zobj.net/source/joypixels-animations/366/waving-hand_1f44b.gif";
 export default {
   badge,
   eth,
   heart,
   left,
   search,
+  wave,
 
   logo,
   nft01,

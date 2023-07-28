@@ -17,7 +17,7 @@ const NFTCard = ({ data }) => {
       <View style={{ width: "100%", height: 250}}>
         <Image
         source={data.image}
-        resizeMethod="contain"
+        resizeMode="cover"
         style={{
           width: "100%",
           height: "100%",
@@ -27,6 +27,29 @@ const NFTCard = ({ data }) => {
         />
         <CircleButton imgUrl={assets.heart} right={10} top={10}/>
       </View> 
+      <SubInfo/>
+      <View style={{ width: "100%", padding: SIZES.font}}>
+        <NFTTitle 
+        title={data.name}
+        subTitle={data.creator}
+        titleSize={SIZES.large}
+        subTitleSize={SIZES.small}
+        />
+      </View>
+
+      <View style={{
+        marginTop: SIZES.font,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+        <EthPrice price={data.price} />
+        <RectButton
+        minWidth={120}
+        fontSize={SIZES.font}
+        handlePress={() => navigation.navigate('Details', { data })}
+        />
+      </View>
     </View>
   )
 }
