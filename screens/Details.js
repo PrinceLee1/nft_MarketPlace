@@ -20,6 +20,13 @@ const DetailsHeader = ({ data, navigation }) => {
     <CircleButton
     imgUrl={assets.left}
     handlePress={ () => navigation.goBack()}
+    left={15}
+    top={StatusBar.currentHeight + 10}
+    />
+     <CircleButton
+    imgUrl={assets.heart}
+    right={15}
+    top={StatusBar.currentHeight + 10}
     />
   </View>
   )
@@ -56,9 +63,23 @@ const Details = ({ route, navigation }) => {
     ListHeaderComponent={() => (
       <React.Fragment>
         <DetailsHeader data={data} navigation={navigation} />
+        <SubInfo/>
+        <View style={{padding: SIZES.font}}>
+          <DetailsDesc data={data}/>
+          {data.bids.length > 0 && (
+            <Text style={{
+              fontSize: SIZES.font,
+              fontFamily: FONTS.semiBold,
+              color: COLORS.primary
+            }}>
+              Current Bids
+            </Text>
+          )}
+        </View>
       </React.Fragment>
     )}
     />
+
    </SafeAreaView>
   )
 }
